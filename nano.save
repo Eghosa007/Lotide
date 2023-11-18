@@ -1,4 +1,4 @@
-function countLetters(sentence) {
+ction countLetters(sentence) {
   const result = {};
 
   // Loop through each character in the sentence
