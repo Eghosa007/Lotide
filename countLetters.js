@@ -26,4 +26,3 @@ const sentence = "Lighthouse Labs";
 const letterCounts = countLetters(sentence);
 
 console.log(letterCounts);
-
