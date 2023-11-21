@@ -15,4 +15,3 @@ assertEqual(head([42]), 42);
 
 // Test Case 4: Check if head returns undefined for an empty array
 assertEqual(head([]), undefined);
-
