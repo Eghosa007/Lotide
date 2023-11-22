@@ -1,16 +1,28 @@
-// test/tailTest.js
-const tail = require('../tail'); // Adjust the path based on your file structure
-const assertEqual = require('../assertEqual');
+const assert = require('chai').assert;
+const tail = require('../tail');
 
-// TEST CASES
-// Test Case 1: Check if tail returns the array without the first element
-assertEqual(JSON.stringify(tail([5, 6, 7])), JSON.stringify([6, 7]));
+describe('tail', function() {
+  it('should return an empty array for a single-element array', function() {
+    assert.deepEqual(tail([1]), []);
+  });
 
-// Test Case 2: Check if tail returns the array without the first element for strings
-assertEqual(JSON.stringify(tail(["Hello", "Lighthouse", "Labs"])), JSON.stringify(["Lighthouse", "Labs"]));
+  it('should return an empty array for a two-element array', function() {
+    assert.deepEqual(tail([1, 2]), []);
+  });
 
-// Test Case 3: Check if tail returns an empty array for an array with a single element
-assertEqual(JSON.stringify(tail([42])), JSON.stringify([]));
+  it('should return [2, 3] for [1, 2, 3]', function() {
+    assert.deepEqual(tail([1, 2, 3]), [2, 3]);
+  });
 
-// Test Case 4: Check if tail returns an empty array for an empty array
-assertEqual(JSON.stringify(tail([])), JSON.stringify([]));
+  it('should return [3, 4, 5] for [1, 2, 3, 4, 5]', function() {
+    assert.deepEqual(tail([1, 2, 3, 4, 5]), [2, 3, 4, 5]);
+  });
+
+  it('should return [3, 4] for [1, 2, 3, 4]', function() {
+    assert.deepEqual(tail([1, 2, 3, 4]), [2, 3, 4]);
+  });
+
+  it('should return [4, 5, 6] for [1, 2, 3, 4, 5, 6]', function() {
+    assert.deepEqual(tail([1, 2, 3, 4, 5, 6]), [2, 3, 4, 5, 6]);
+  });
+});

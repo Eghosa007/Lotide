@@ -1,7 +1,9 @@
-// tail.js
+// FUNCTION IMPLEMENTATION
 const tail = function(arr) {
-    return arr.slice(1);
-  };
-  
-  module.exports = tail;
-  
+  if (arr.length <= 1) {
+    return [];
+  }
+  return arr.slice(1).map(element => element);
+};
+
+module.exports = tail;

@@ -1,13 +1,8 @@
-// test/assertEqualTest.js
+// test/assertArraysEqualTest.js
+const assertArraysEqual = require('../assertArraysEqual');
 
-// Add the require statement to import assertEqual
-const assertEqual = require('../assertEqual');
-
-// TEST CODE
-// ...
-
-// Example test cases using assertEqual
-assertEqual("Lighthouse Labs", "Bootcamp");
-assertEqual(1, 1);
-
-// Add more test cases as needed
+// Test cases
+assertArraysEqual([1, 2, 3], [1, 2, 3]); // should PASS
+assertArraysEqual([1, 2, 3], [3, 2, 1]); // should FAIL
+assertArraysEqual(["1", "2", "3"], ["1", "2", "3"]); // should PASS
+assertArraysEqual(["1", "2", "3"], ["1", "2", 3]); // should FAIL
