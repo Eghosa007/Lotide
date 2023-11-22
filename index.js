@@ -7,10 +7,11 @@ module.exports = {
   head:   head,
   tail:   tail,
   middle: middle
-};
-const assertArraysEqual = require('./assertArraysEqual');
+const assertArraysEqual = require('./assertArraysEqual');  
 
 module.exports = {
   // ... other functions ...
   assertArraysEqual: assertArraysEqual
-};
+}
+
+}
