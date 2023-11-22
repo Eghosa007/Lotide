@@ -8,3 +8,9 @@ module.exports = {
   tail:   tail,
   middle: middle
 };
+const assertArraysEqual = require('./assertArraysEqual');
+
+module.exports = {
+  // ... other functions ...
+  assertArraysEqual: assertArraysEqual
+};
